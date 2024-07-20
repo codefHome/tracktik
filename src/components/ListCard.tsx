@@ -21,7 +21,7 @@ const ListCard = ({
   return (
     <div
       onClick={() => handleNavigation(id)}
-      className={`flex flex-col gap-1 mb-10 w-full shadow-lg p-1 ${ isDark ? "bg-[#111010]" : "bg-white"} xl:w-[350px] h-auto xl:h-[360px] cursor-pointer`}
+      className={`flex flex-col gap-1 mb-10 w-full shadow-lg p-1 ${ isDark ? "bg-[#292828]" : "bg-white"} xl:w-[350px] h-auto xl:h-[360px] cursor-pointer`}
     >
       <img
         src={imageUrl ?? fallback}

@@ -69,5 +69,5 @@ These dependencies play a crucial role in various aspects of your project, from 
 
 
 **Deployed version**:
-
+https://tracktik-challenge.netlify.app
 
