@@ -1,7 +1,7 @@
 # Tracktik Challenge - Frontend
 
 
-✨ The Tracktik Frontend Project is a web application built with React, TypeScript, TailwindCSS, Redux Toolkit, RTK Query and Material-UI. It serves as the user interface for the challenge. This project is part of my vetting process for Front-end open position. I also write unit test using vitest and RTL and jest to complete the application.
+✨ The Tracktik Frontend Project is a web application built with React, TypeScript, TailwindCSS, Redux Toolkit, RTK Query and Material-UI. It serves as the user interface for the challenge. This project is part of my vetting process for Front-end open position. I also write unit test using vitest, RTL and jest to complete the application.
 
 ## Run Locally
 
@@ -47,9 +47,9 @@ npm run test:coverage
 
 ## NPM Scripts
 
-- **preview**: Start the development server using Nx.
-- **build**: Build the project using Nx.
-- **test**: Run tests using Nx.
+- **preview**: Start the development server using npm.
+- **build**: Build the project using npm.
+- **test**: Run tests using npm.
 - **lint**: Lint the TypeScript files in the `src` directory using ESLint, with caching and zero warnings allowed.
 
 
