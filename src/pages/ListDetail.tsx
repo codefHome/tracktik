@@ -4,6 +4,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import ImageSlider from "../components/ImageSlider";
 import InfoField from "../components/InfoField";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { useAppSelector } from "store/hooks";
 
 const ListDetail = () => {
   const [searchParams] = useSearchParams();
@@ -13,8 +14,9 @@ const ListDetail = () => {
   const handleBack = () =>{
     navigate(-1)
   }
+  const{isDark}=useAppSelector(state =>state.tracking)
   return (
-    <div className="flex w-full p-2 mt-10 xl:p-20 bg-white xl:items-center xl:justify-center shadow-2xl">
+    <div className={`flex w-full p-2 mt-10 xl:p-20 ${ isDark ? "bg-[#202020]" : "bg-white"} xl:items-center xl:justify-center shadow-2xl`}>
       <div className="flex flex-col w-full justify-center items-center gap-2">
         <span className="flex w-full xl:w-[1000px] justify-center xl:justify-start p-2 xl:p-0  ">
           <Typography
@@ -36,7 +38,7 @@ const ListDetail = () => {
           </div>
           <span className="flex flex-col pt-1">
             <Typography
-              sx={{ color: "blue", fontStyle: "italic" }}
+              sx={{  fontStyle: "italic" }}
               variant="caption"
             >
               Client
@@ -44,7 +46,7 @@ const ListDetail = () => {
             <Typography>{data?.client?.givenName}</Typography>
           </span>
         </div>
-        <div className="flex flex-col xl:flex-row bg-[whitesmoke] rounded-lg gap-8 shadow-2xl w-full mt-5 xl:w-[1000px] border-1 p-5">
+        <div className={`flex flex-col xl:flex-row ${ isDark ? "bg-[#111010]" : "bg-white"} rounded-lg gap-8 shadow-2xl w-full mt-5 xl:w-[1000px] border-1 p-5`}>
           <div className="flex flex-col gap-2">
             <InfoField label="Site Name:" value={data?.title} />
 

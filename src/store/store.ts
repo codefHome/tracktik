@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { tracktikAPI } from "../api/tracktikAPI";
-
+import trackingReducer from "./slices/trackSlice"
 const store = configureStore({
   reducer: {
+    tracking:trackingReducer,
     [tracktikAPI.reducerPath]: tracktikAPI.reducer,
   },
   middleware: (getDefaultMiddleware) =>

@@ -3,6 +3,7 @@ import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
 import { UserType } from '../types/types';
 import mypic from "../assets/mypic.png";
+import { useAppSelector } from 'store/hooks';
 interface UserInfoCardProps {
     userData: UserType | null;
   }
@@ -20,7 +21,7 @@ export default function UserInfoCard({ userData }: UserInfoCardProps) {
 
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
-
+  const{isDark}= useAppSelector(state => state.tracking)
   return (
     <div>
       <div aria-describedby={id}  onClick={handleClick} className='cursor-pointer'>
@@ -32,7 +33,7 @@ export default function UserInfoCard({ userData }: UserInfoCardProps) {
     </div>
       </div>
       <Popover
-      className='flex justify-center items-center'
+    className='flex justify-center items-center'
         id={id}
         open={open}
         anchorEl={anchorEl}
@@ -46,9 +47,9 @@ export default function UserInfoCard({ userData }: UserInfoCardProps) {
             horizontal: 'left',
           }}
       >
-        <div className="flex justify-center items-center flex-col gap-1 p-2 w-full ">
-      <Typography sx={{fontSize:'14px'}}>{userData?.givenName}</Typography>
-      <Typography sx={{fontSize:'14px'}}>{userData?.email}</Typography>
+        <div className={`flex justify-center items-center flex-col gap-1 p-2 w-full ${ isDark ? "bg-[#111010]" : "bg-[#D6F3E7]"}`}>
+      <Typography   variant="subtitle1" sx={{fontSize:'14px',color: isDark ? 'white' : 'black'}}>{userData?.givenName}</Typography>
+      <Typography   variant="subtitle1" sx={{fontSize:'14px',color: isDark ? 'white' : 'black'}}>{userData?.email}</Typography>
       </div>
       </Popover>
     </div>

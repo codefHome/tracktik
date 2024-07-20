@@ -1,3 +1,5 @@
+import { ReactNode } from "react"
+
 export interface UserType {
   id: string
   email: string
@@ -59,3 +61,9 @@ export interface Client {
   updatedAt: string
   tags: string[]
 }
+
+export interface IButtonProps {
+  icon?: ReactNode,
+  label:string;
+  handleClick?: () => void;
+  }

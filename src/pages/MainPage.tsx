@@ -5,6 +5,7 @@ import FilterListIcon from "@mui/icons-material/FilterList";
 import ListCard from "../components/ListCard";
 import { useMainPage } from "../hooks/useMainPage";
 import LinearProgress from '@mui/material/LinearProgress';
+import { useAppSelector } from "store/hooks";
 
 const MainPage = () => {
   const {
@@ -23,11 +24,11 @@ const MainPage = () => {
     handlePageChange,
     handleNavigation,
   } = useMainPage();
-console.log({data});
+const{isDark}= useAppSelector(state => state.tracking)
 
   return (
     <div className="flex flex-col w-full px-2 md:p-5">
-      <div className="flex flex-col mt-12 px-3 rounded-lg bg-white  pb-3">
+      <div className={`flex flex-col mt-12 px-3 rounded-lg ${ isDark ? "bg-[#111010]" : "bg-white"}  pb-3`}>
         <div className="flex py-5  mb-10 ">
           <Typography
             variant="subtitle1"

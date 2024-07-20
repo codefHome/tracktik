@@ -1,6 +1,7 @@
 import { InputAdornment, TextField } from "@mui/material";
 
 import { ChangeEvent, ReactNode } from "react";
+import { useAppSelector } from "store/hooks";
 export interface SearchFieldProps {
   onChange: (event:ChangeEvent<HTMLInputElement>) => void;
   value: string;
@@ -8,10 +9,10 @@ export interface SearchFieldProps {
   icon:ReactNode
 }
 const SearchField = ({ onChange, value,placeHolder,icon }: SearchFieldProps) => {
+  const{isDark}= useAppSelector(state => state.tracking)
   return (
     <div>
       <TextField
-  
         onChange={onChange}
         value={value}
         fullWidth
@@ -27,8 +28,11 @@ const SearchField = ({ onChange, value,placeHolder,icon }: SearchFieldProps) => 
             '& .MuiOutlinedInput-root': {
               borderRadius: "20px",
               height:"40px",
-              bgcolor:"white"
+              bgcolor:isDark ? 'black' :'white',
+              color:isDark ? 'white' :'black',
+
             },
+           
           }}
       />
     </div>

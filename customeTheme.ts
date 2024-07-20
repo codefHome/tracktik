@@ -18,40 +18,10 @@ declare module '@mui/material/styles' {
   }
 }
 
-const appTheme = createTheme({
-  components: {
 
-    MuiButtonBase: {
-      defaultProps: {
-        sx: {
-          ":disabled": {
-            fontFamily: 'Inter',
-            background: "#F3F3F3",
-            color: "#DADADA",
-            pointerEvents: "none",
-            cursor: "not-allowed",
-            border: "1px solid #000"
-          }
-        }
-      },
-
-    },
-  },
-  typography: {
-    fontFamily: 'Inter',
-    caption: {
-              color: '#000000',
-              fontSize: '40px',
-              fontWeight: '700',
-              lineHeight: 1.5,
-            },
-
-  },
-  
-})
 
 const lightTheme = createTheme({
-  ...appTheme,
+
   palette: {
     mode: 'light',
     primary: {
@@ -94,12 +64,10 @@ const lightTheme = createTheme({
      
     },
     subtitle2: {
-        color: '#2e2e2e',
-        fontWeight: 400,
-        fontSize: '16px',
-        lineHeight: 'normal',
-        textTransform: 'none',
-        whiteSpace:'wrap'
+      color: '#000000',
+      fontSize: '25px',
+      fontWeight: 600,
+      letterSpacing: '1px',
       },
 
   },
@@ -126,7 +94,6 @@ const lightTheme = createTheme({
 });
 
 const darkTheme = createTheme({
-  ...appTheme,
   palette: {
     mode: 'dark',
     primary: {
@@ -157,33 +124,30 @@ const darkTheme = createTheme({
   typography: {
     fontFamily: 'Inter',
     caption: {
-      color: '#ffffff',
-      fontSize: 40,
+      color: '#FFFFFF',
+      fontSize: '15px',
       fontWeight: 'normal',
       letterSpacing: '1px',
     },
     overline: {
-      color: '#ffffff',
+      color: '#FFFFFF',
       textTransform: 'none',
-      fontSize: '16px',
-      fontWeight: 600,
+      fontSize: '15px',
+      fontStyle:'italic',
     },
     subtitle1: {
-      color: '#ffffff',
-      fontWeight: 400,
-      fontSize: '20px',
-      lineHeight: 'normal',
-      letterSpacing: '-0.456px',
-      textTransform: 'none',
+      color: '#FFFFFF',
+      fontSize: '15px',
+      fontWeight: 600,
+      letterSpacing: '1px',
+      
+     
     },
     subtitle2: {
-        color: '#ffffff',
-        fontWeight: 400,
-        fontSize: '16px',
-        lineHeight: 'normal',
-        textTransform: 'none',
-        whiteSpace:'wrap'
-       
+      color: '#FFFFFF',
+      fontSize: '25px',
+      fontWeight: 600,
+      letterSpacing: '1px',
       },
 
   },
@@ -208,4 +172,4 @@ const darkTheme = createTheme({
 });
 
 export { lightTheme, darkTheme };
-export default appTheme;
+
